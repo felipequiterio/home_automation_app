@@ -1,0 +1,147 @@
+#:import wa weather_api
+<label_c>:
+
+     font_name: 'Roboto'
+     font_size: 25
+     markup: True
+
+<RobotoButton@Button>:
+
+     background_normal: 'button_down.png'
+     background_down: 'button_down.png'
+     border: (2, 2, 2, 2)
+     font_name: 'Roboto'
+     font_size: 25
+     bold: True
+
+MDScreen:
+
+     #adaptive_height: True
+     #adaptive_width: True
+     #adaptive_size: True
+
+     MDBoxLayout:
+
+          orientation: "vertical"
+
+          MDTopAppBar:
+
+
+               adaptive_size: True
+               elevation: 3
+               md_bg_color: (16/255, 24/255, 28/255)
+
+               MDBoxLayout:
+
+                    md_bg_color: (16/255, 24/255, 28/255)
+
+                    MDLabel:
+
+                         text: "DOBA ver - 2.0.1"
+                         pos_hint: {'center_x': 0.6, 'center_y': 0.9}
+                         size: "200dp", "150dp"
+                         size_hint: None, None
+                         font_size: 20
+                         font_name: 'Roboto-Medium'
+
+
+                    MDLabel:
+
+                         id: time
+                         text: '[b]00[/b]:00:00'
+                         pos_hint: {'center_x': 0.5, 'center_y': 0.9}
+                         font_name: 'Roboto-Medium'
+
+
+
+
+          MDBoxLayout:
+
+               spacing: "10dp"
+
+               Cardzin:
+                    id: weather_card
+                    drag_rectangle: self.x, self.y, 250, 130
+                    size: dp(250), dp(130)
+                    shadow_softness: 4
+                    shadow_offset: (-2, 2)
+                    size_hint: None, None
+                    padding: dp(10)
+                    orientation: 'vertical'
+                    md_bg_color: (77/255,110/255,149/255)
+
+                    MDBoxLayout:
+                         #md_bg_color: (100/255,110/255,149/255)
+                         size_hint_y: 0.2
+                         orientation: 'horizontal'
+
+                         MDIcon:
+                              icon: 'weather-partly-cloudy'
+                              color: (227/255, 223/255, 129/255)
+
+                         MDLabel:
+                              text: wa.WeatherData.weather_now
+                              size: '20dp', '20dp'
+                              font_size: 14
+                              font_name: 'Roboto-Medium'
+
+                         MDIcon:
+                              icon: 'source-commit-start-next-local'
+                              size: '20dp', '20dp'
+                              color: (115/255,240/255,233/255)
+
+                         MDLabel:
+                              text: wa.WeatherData.location
+                              font_size: 11
+                              font_name: 'Roboto-Medium'
+
+
+                    MDBoxLayout:
+                         size_hint_y: 0.4
+
+                         MDBoxLayout:
+                              #md_bg_color: (1/255,110/255,149/255)
+
+                              size_hint_x: 0.5
+                              orientation: 'horizontal'
+
+                              MDLabel:
+                                   text: wa.WeatherData.temp + '°C'
+                                   font_size: 45
+                                   font_name: 'Roboto-Medium'
+                         MDBoxLayout:
+
+                              size_hint_x: 0.5
+                              md_bg_color: 1,1,1
+                              orientation: 'horizontal'
+
+
+                    MDBoxLayout:
+                         #md_bg_color: (100/255,110/255,19/255)
+                         size_hint_y: 0.4
+                         orientation: 'horizontal'
+
+                         MDLabel:
+                              text: 'THU : Mostly Sunny - 30°/23° \nFRI   : Partly cloudy - 30°/23° \nSAT  : Mostly sunny - 30°/24°'
+                              font_size: 11
+                              font_name: 'Roboto-Medium'
+
+
+
+
+<Cardzin>:
+
+     drag_timeout: 10000000
+     drag_distance: 0
+     md_bg_color: (25/255, 25/255, 25/255)
+     elevation: 4
+     shadow_softness: 2
+     shadow_offset: (-2, 2)
+   # drag_rectangle: self.x, self.y, self.width, self.length
+   # pos_hint: (None, None)
+   # size: "200dp", "100dp"
+   # padding: 4
+   # color: "grey"
+   # pos: "12dp", "12dp"
+   # size_hint: None, None
+

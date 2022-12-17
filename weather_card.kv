@@ -1,0 +1,60 @@
+MDCard:
+     id: weather_card
+     drag_rectangle: self.x, self.y, 300, 200
+     size: dp(250), dp(130)
+     shadow_softness: 4
+     shadow_offset: (-2, 2)
+     size_hint: None, None
+     padding: dp(5)
+     md_bg_color: (77/255,110/255,149/255)
+     orientation: 'vertical'
+
+
+     MDBoxLayout:
+
+          #md_bg_color: (100/255,110/255,149/255)
+          size_hint_y: 0.2
+          orientation: 'horizontal'
+
+          MDIcon:
+               icon: 'weather-partly-cloudy'
+               color: (227/255, 223/255, 129/255)
+
+          MDLabel:
+               text: ': Sunny'
+               size: '20dp', '20dp'
+               font_size: 14
+
+          MDIcon:
+               icon: 'source-commit-start-next-local'
+               size: '20dp', '20dp'
+               color: (115/255,240/255,233/255)
+
+          MDLabel:
+               text: ': Miami, FL'
+               font_size: 14
+
+
+     MDBoxLayout:
+          #md_bg_color: (1/255,110/255,149/255)
+          size_hint_y: 0.4
+          orientation: 'horizontal'
+          MDLabel:
+               text: '27°C'
+               font_size: 45
+               font_name: 'Roboto-Medium'
+
+     MDBoxLayout:
+          #md_bg_color: (100/255,110/255,19/255)
+          size_hint_y: 0.4
+          orientation: 'horizontal'
+          MDLabel:
+               text: 'THU : Mostly Sunny - 30°/23° \nFRI   : Partly cloudy - 30°/23° \nSAT  : Mostly sunny - 30°/24°'
+               font_size: 12
+
+
+
+
+
+
+
